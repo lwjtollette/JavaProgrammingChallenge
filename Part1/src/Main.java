@@ -106,17 +106,17 @@ public static void main(String[] args) {
 		
 	/*Prints "Hello, World" to the screen*/
 		
-	//HelloWorld();
+	HelloWorld();
 	
 	/* Accepts user name input and returns greeting with name*/
 	
-	//AcceptUserName();
+	AcceptUserName();
 	
 	/* Summation of numbers 1 to user input number*/
-	//Sum();
+	Sum();
 	
 	/* Allows user to chose to do a summation or find the product of numbers 1 to user input*/
-	//ProductVsSum();
+	ProductVsSum();
 
 	}
 
