@@ -40,6 +40,7 @@ public static void Sum() {
 	System.out.println("The Sum = " + sum);
 }
 public static void ProductVsSumCase(int choice, int number, int sum, int product) {
+	/* Processes correct calculation based off of user's choice*/
 	switch(choice) {
 	
 		case 1: {
@@ -51,29 +52,33 @@ public static void ProductVsSumCase(int choice, int number, int sum, int product
 				sum = sum +i;
 			}
 
-			/* Prints sum */
+			/* Prints sum result */
 			System.out.println("The Sum = " + sum);
 			break;
 		}
 		case 2:{
 		
+			/* Calculates product of 1 to N (user inputed number) */
 			product=number;
 			for (int j = 1; j < number; j++) {
 				product = product * j;
 	
 		}
-		
+			/* Prints product result*/
 			System.out.println("The Product = " + product);
 			break;
 		}
 		default: {
 		
+			/* notifies user that option was invalid */
 			System.out.println("Please enter a correct option: 1 or 2");
 			
+			/* Prompts user to choose a valid option */
 			reader = new Scanner(System.in);
 			System.out.println("Please Enter a Number Option [1: Sum or 2:Product] ");
 			choice = reader.nextInt();
-		
+			
+			/* Runs back through cases with correct option */
 			ProductVsSumCase(choice, number, sum, product);
 			break;
 		}
@@ -90,6 +95,7 @@ public static void ProductVsSum() {
 	System.out.println("Please enter an integer of your choice: ");
 	number = reader.nextInt(); 
 	
+	/* Scans for system input to register option from user*/
 	System.out.println("Please Enter a Number Option [1: Sum or 2:Product] ");
 	choice = reader.nextInt();
 	
@@ -109,7 +115,8 @@ public static void ProductVsSum() {
 	/* Summation of numbers 1 to user input number*/
 	//Sum();
 	
-	ProductVsSum();
+	/* Allows user to chose to do a summation or find the product of numbers 1 to user input*/
+	//ProductVsSum();
 
 	}
 
