@@ -13,6 +13,7 @@ public static void HelloWorld() {
 
 public static void AcceptUserName() {
 	
+	/* Scans for system input to register name from user */
 	reader = new Scanner(System.in);
 	System.out.println("Please enter your name: ");
 	String name = reader.next();
@@ -30,26 +31,85 @@ public static void Sum() {
 	int number = reader.nextInt(); 
 	sum=number;
 	
-	for (int i = 0; i < number ; i++)
-	{
+	/* Sums numbers from 1 to N (user inputed number) */
+	for (int i = 0; i < number ; i++){
 		sum = sum +i;
 	}
 	
+	/* Prints sum */
 	System.out.println("The Sum = " + sum);
+}
+public static void ProductVsSumCase(int choice, int number, int sum, int product) {
+	switch(choice) {
+	
+		case 1: {
+		
+			sum=number;
+			
+			/* Sums numbers from 1 to N (user inputed number) */
+			for (int i = 0; i < number ; i++){
+				sum = sum +i;
+			}
+
+			/* Prints sum */
+			System.out.println("The Sum = " + sum);
+			break;
+		}
+		case 2:{
+		
+			product=number;
+			for (int j = 1; j < number; j++) {
+				product = product * j;
+	
+		}
+		
+			System.out.println("The Product = " + product);
+			break;
+		}
+		default: {
+		
+			System.out.println("Please enter a correct option: 1 or 2");
+			
+			reader = new Scanner(System.in);
+			System.out.println("Please Enter a Number Option [1: Sum or 2:Product] ");
+			choice = reader.nextInt();
+		
+			ProductVsSumCase(choice, number, sum, product);
+			break;
+		}
+	}
+}
+public static void ProductVsSum() {
+	int sum= 0; // initiating the sum to 0
+	int choice= 0;
+	int number= 0;
+	int product =0;
+	
+	/* Scans for system input to register number from user*/
+	reader = new Scanner(System.in);
+	System.out.println("Please enter an integer of your choice: ");
+	number = reader.nextInt(); 
+	
+	System.out.println("Please Enter a Number Option [1: Sum or 2:Product] ");
+	choice = reader.nextInt();
+	
+	ProductVsSumCase(choice, number, sum, product);
+	
 }
 	public static void main(String[] args) {
 		
 	/*Prints "Hello, World" to the screen*/
 		
-	HelloWorld();
+	//HelloWorld();
 	
 	/* Accepts user name input and returns greeting with name*/
 	
-	AcceptUserName();
+	//AcceptUserName();
 	
 	/* Summation of numbers 1 to user input number*/
-	Sum();
-		
+	//Sum();
+	
+	ProductVsSum();
 
 	}
 
