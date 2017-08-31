@@ -4,8 +4,39 @@ import java.util.Scanner;
 
 public class Main {
 static Scanner reader;
-	public static void forloop() {
+	
+	public static void forLoop(List<Integer> list) {
+		int sum =0;
 		
+		for(int i=0; i < list.size(); i++) {
+			sum = sum + list.get(i);
+		}
+		
+		System.out.println("The Sum = " + sum);
+	}
+	
+	public static void whileLoop(List<Integer> list, int itemCount) {
+		int sum=0;
+		int count =0;
+		
+		while(count < itemCount)
+		{
+			sum = sum + list.get(count);
+			count++;
+		}
+		
+		System.out.println("The Sum = " + sum);
+	}
+	
+	public static void Recursion(List<Integer> list, int count, int sum, int itemCount) {
+		
+		if(count < itemCount)
+		{
+			sum= sum + list.get(count);
+			count++;
+			Recursion(list, count, sum, itemCount);
+		}
+		else System.out.println("The Sum = " + sum);
 	}
 	public static void main(String[] args) {
 	
@@ -29,8 +60,11 @@ static Scanner reader;
 		count++;
 	}
 	
-	for(int i = 0; i <list.size(); i++) {
-	System.out.println(list.get(i));
-	}
+	forLoop(list);
+	
+	whileLoop(list, itemCount);
+	
+	Recursion(list,0, 0, itemCount);
+	
 	}
 }
