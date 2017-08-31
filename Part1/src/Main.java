@@ -102,7 +102,7 @@ public static void ProductVsSum() {
 	ProductVsSumCase(choice, number, sum, product);
 	
 }
-	public static void main(String[] args) {
+public static void main(String[] args) {
 		
 	/*Prints "Hello, World" to the screen*/
 		
