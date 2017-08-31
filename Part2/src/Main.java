@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
@@ -61,14 +62,34 @@ static Scanner reader;
 			}
 		}
 		
-		for(int j=0; j< itemCount; j++){
-		System.out.println("List item # " + printCount + " is " + list.get(j) );
-		printCount++;
-		}
+		
+			System.out.println("List Rotated by: " + rotation + " is " + list);
+	
+		
 	}
+	
+	public static void Sort(List<Integer> list) {
+		Collections.sort(list);
+		
+		System.out.println("Mereged and Sorted Lists: " + list);
+		
+	}
+	
+	public static void Merge( List<Integer> list1, List<Integer> list2) {
+		System.out.println("List 1: " + list1);
+		System.out.println("list 2: " + list2);
+		
+		List<Integer> listMerged = new ArrayList<Integer>();
+		listMerged.addAll(list1);
+		listMerged.addAll(list2);
+		
+		Sort(listMerged);
+	}
+	
 	public static void main(String[] args) {
 	
 		List<Integer> list = new ArrayList<Integer>();
+		List<Integer> list2 = new ArrayList<Integer>();
 		int itemNum = 1;	// Identifies an items position in the list
 		int count =0;		// Keeps Count of Number of Items entered into list
 		int listItem =0;	//Number that will be added to list
@@ -95,6 +116,26 @@ static Scanner reader;
 	Recursion(list,0, 0, itemCount); // calculates a sum using recursion
 	
 	Rotate(list, itemCount); // rotates a list
+	
+	reader = new Scanner(System.in);
+	System.out.println("Create another list to merge to the first list!");
+	System.out.println("How many items do you wish to add to the list? (Enter an Integer)");
+	int itemCount2 = reader.nextInt(); 
+	
+	itemNum=1;
+	listItem =0;
+	count=0;
+	
+	while(count < itemCount2)
+	{
+		System.out.println("Please enter item #" + itemNum );
+		listItem = reader.nextInt();
+		list2.add(listItem);
+		itemNum++;
+		count++;
+	}
+	
+	Merge(list, list2); // Merges and sorts two lists
 	
 	}
 }
