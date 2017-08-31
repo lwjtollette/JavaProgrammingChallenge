@@ -38,6 +38,34 @@ static Scanner reader;
 		}
 		else System.out.println("The Sum = " + sum);
 	}
+	
+	public static void Rotate(List<Integer> list, int itemCount) {
+		int rotation = 0;
+		int count =0;
+		int printCount =0;
+		int setNum = 0;
+		
+		reader = new Scanner(System.in);
+		System.out.println("By what number would you like to rotate the list?");
+		rotation = reader.nextInt(); 
+		
+		System.out.println("itemCount: " + itemCount);
+		
+		for(int i=0; i < (itemCount - rotation); i++) {
+			for (int j= list.size() -1; j > 0; j--) {
+	
+				int temp = list.get(j);
+				list.set(j, list.get(j-1));
+				list.set(j-1, temp);
+				
+			}
+		}
+		
+		for(int j=0; j< itemCount; j++){
+		System.out.println("List item # " + printCount + " is " + list.get(j) );
+		printCount++;
+		}
+	}
 	public static void main(String[] args) {
 	
 		List<Integer> list = new ArrayList<Integer>();
@@ -53,18 +81,20 @@ static Scanner reader;
 	
 	while(count < itemCount)
 	{
-		System.out.println("Please enter item #" + itemNum);
+		System.out.println("Please enter item #" + itemNum );
 		listItem = reader.nextInt();
 		list.add(listItem);
 		itemNum++;
 		count++;
 	}
 	
-	forLoop(list);
+	forLoop(list); // calculates a sum using a for loop
 	
-	whileLoop(list, itemCount);
+	whileLoop(list, itemCount); // calculates a sum using a while loop
 	
-	Recursion(list,0, 0, itemCount);
+	Recursion(list,0, 0, itemCount); // calculates a sum using recursion
+	
+	Rotate(list, itemCount); // rotates a list
 	
 	}
 }
