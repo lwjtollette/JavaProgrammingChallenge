@@ -120,7 +120,7 @@ static Scanner reader;
 	System.out.println("Create another list to merge to the first list!");
 	System.out.println("How many items do you wish to add to the list? (Enter an Integer)");
 	int itemCount2 = reader.nextInt(); 
-	reader.close();
+
 	itemNum=1;
 	listItem =0;
 	count=0;
