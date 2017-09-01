@@ -13,7 +13,7 @@ static Scanner reader;
 			sum = sum + list.get(i);
 		}
 		
-		System.out.println("The Sum = " + sum);
+		System.out.println("The Sum by for loop= " + sum);
 	}
 	
 	public static void whileLoop(List<Integer> list, int itemCount) {
@@ -26,7 +26,7 @@ static Scanner reader;
 			count++;
 		}
 		
-		System.out.println("The Sum = " + sum);
+		System.out.println("The Sum by while loop = " + sum);
 	}
 	
 	public static void Recursion(List<Integer> list, int count, int sum, int itemCount) {
@@ -37,21 +37,19 @@ static Scanner reader;
 			count++;
 			Recursion(list, count, sum, itemCount);
 		}
-		else System.out.println("The Sum = " + sum);
+		else System.out.println("The Sum by Recursion = " + sum);
 	}
 	
 	public static void Rotate(List<Integer> list, int itemCount) {
 		int rotation = 0;
-		int count =0;
-		int printCount =0;
-		int setNum = 0;
 		
+		/* takes user input for rotation*/
 		reader = new Scanner(System.in);
 		System.out.println("By what number would you like to rotate the list?");
 		rotation = reader.nextInt(); 
 		
-		System.out.println("itemCount: " + itemCount);
 		
+		/*Rotates list items*/
 		for(int i=0; i < (itemCount - rotation); i++) {
 			for (int j= list.size() -1; j > 0; j--) {
 	
@@ -71,7 +69,7 @@ static Scanner reader;
 	public static void Sort(List<Integer> list) {
 		Collections.sort(list);
 		
-		System.out.println("Mereged and Sorted Lists: " + list);
+		System.out.println("Mereged and Sorted List: " + list);
 		
 	}
 	
@@ -117,6 +115,7 @@ static Scanner reader;
 	
 	Rotate(list, itemCount); // rotates a list
 	
+	/* Takes in input for number of items in the second list*/
 	reader = new Scanner(System.in);
 	System.out.println("Create another list to merge to the first list!");
 	System.out.println("How many items do you wish to add to the list? (Enter an Integer)");
@@ -126,6 +125,7 @@ static Scanner reader;
 	listItem =0;
 	count=0;
 	
+	/* ands items to the the second list*/
 	while(count < itemCount2)
 	{
 		System.out.println("Please enter item #" + itemNum );
