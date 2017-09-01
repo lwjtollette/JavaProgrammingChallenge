@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class Main {
-private static Scanner reader;
+public static Scanner reader;
 public static void HelloWorld() {
 	
 	/*Print "Hello, World" to the screen*/
@@ -98,7 +98,6 @@ public static void ProductVsSum() {
 	/* Scans for system input to register option from user*/
 	System.out.println("Please Enter a Number Option [1: Sum or 2:Product] ");
 	choice = reader.nextInt();
-	
 	ProductVsSumCase(choice, number, sum, product);
 	
 }
